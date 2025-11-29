@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Nick Wilde illustration">
+  <defs>
+    <linearGradient id="character-nick-wilde-svg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b0d0c"/>
+      <stop offset="50%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <style>
+      .title {
+        font-family: 'Inter', 'Segoe UI', sans-serif;
+        font-size: 64px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        fill: #f8fafc;
+      }
+      .subtitle {
+        font-family: 'Inter', 'Segoe UI', sans-serif;
+        font-size: 32px;
+        font-weight: 600;
+        fill: rgba(248, 250, 252, 0.9);
+      }
+      .tag {
+        font-family: 'Inter', 'Segoe UI', sans-serif;
+        font-size: 23px;
+        font-weight: 700;
+        fill: rgba(248, 250, 252, 0.8);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+    </style>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#character-nick-wilde-svg-grad)" rx="24"/>
+  <rect x="40" y="40" width="1200" height="640" rx="28" fill="rgba(15, 23, 42, 0.22)" stroke="rgba(148, 163, 184, 0.35)" stroke-width="2"/>
+  <circle cx="230" cy="180" r="72" fill="rgba(14, 165, 233, 0.2)" stroke="rgba(224, 231, 255, 0.55)" stroke-width="12"/>
+  <circle cx="998" cy="158" r="58" fill="rgba(16, 185, 129, 0.25)" stroke="rgba(224, 231, 255, 0.4)" stroke-width="10"/>
+  <path d="M120 580 Q 640.0 680 1160 580" fill="none" stroke="rgba(226, 232, 240, 0.6)" stroke-width="6" stroke-linecap="round" stroke-dasharray="24 16"/>
+  <text x="80" y="302" class="tag">Zootopia Feature</text>
+  <text x="80" y="389" class="title">Nick Wilde</text>
+  <text x="80" y="461" class="subtitle">Wily fox hustler turned resourceful partner</text>
+  <text x="80" y="533" class="subtitle">Mammal Metropolis • Fan Guide</text>
+</svg>
