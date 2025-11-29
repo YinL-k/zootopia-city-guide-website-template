@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     button.addEventListener('click', function() {
       const label = this.textContent.trim();
       track('cta_click', { label });
-      if (label.toLowerCase().includes('sample') || label.toLowerCase().includes('quote')) {
+      if (label.toLowerCase().includes('sample') || label.toLowerCase().includes('quote') || label.toLowerCase().includes('demo')) {
         showContactModal(label);
       }
     });
@@ -117,13 +117,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Sticky CTA button
   const stickyBtn = document.createElement('button');
-  stickyBtn.textContent = 'Get Quote';
+  stickyBtn.textContent = 'View Sample';
   stickyBtn.className = 'btn-primary sticky-cta cta-trigger';
-  stickyBtn.setAttribute('aria-label', 'Get Quote');
+  stickyBtn.setAttribute('aria-label', 'View Sample');
   document.body.appendChild(stickyBtn);
   stickyBtn.addEventListener('click', () => {
     track('sticky_cta_click');
-    showContactModal('Get Quote');
+    showContactModal('View Sample');
   });
 
   // Resource links tracking
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Build payload
       const payload = {
-        company: document.getElementById('lf-company').value.trim(),
+        team: document.getElementById('lf-team').value.trim(),
         email: document.getElementById('lf-email').value.trim(),
         message: document.getElementById('lf-message').value.trim(),
         source: 'inline_form'
@@ -176,13 +176,13 @@ function showContactModal(buttonType) {
   modal.innerHTML = `
     <div class="modal-content">
       <div class="modal-header">
-        <h3>${buttonType.toLowerCase().includes('sample') ? 'Request Sample Kit' : 'Get Instant Quote'}</h3>
+        <h3>${buttonType.toLowerCase().includes('sample') ? 'Request Sample Kit' : 'View Demo Details'}</h3>
         <button class="modal-close" aria-label="Close">&times;</button>
       </div>
       <div class="modal-body">
         <form class="contact-form">
           <div class="form-group">
-            <label for="company">Company Name *</label>
+            <label for="company">Team or Project Name *</label>
             <input type="text" id="company" name="company" required>
           </div>
           <div class="form-group">
@@ -201,22 +201,22 @@ function showContactModal(buttonType) {
             <label for="product">Product Interest</label>
             <select id="product" name="product">
               <option value="">Select Product Line</option>
-              <option value="non-slip-grabbers">BlueFront Non-Slip Grabbers — 6 Studs Ice Cleats Whole Cover</option>
-              <option value="flexclaw">BlueFront FlexClaw — Convertible Front Cover Ice Cleats with Strap System</option>
-              <option value="icewalker-pro">BlueFront IceWalker Pro — Tungsten-Toe Ice Cleats for Everyday Traction</option>
-              <option value="griprunner">BlueFront GripRunner — 11-Spike Full Traction for Extreme Winter Grip</option>
-              <option value="motoshield">BlueFront MotoShield — Rubber Motorcycle Rain Shoe Covers</option>
-              <option value="steelgrip-pro">BlueFront SteelGrip Pro — 21-Tooth Stainless Steel Ice Cleats for Hiking &amp; Mountaineering</option>
+              <option value="grip-lite">Sample Grip Lite — 6 Stud Full Cover Concept</option>
+              <option value="flexclaw">Sample FlexClaw — Convertible Cover Concept</option>
+              <option value="icewalker">Sample IceWalker — Everyday Traction Concept</option>
+              <option value="griprunner">Sample GripRunner — 11-Spike Concept</option>
+              <option value="motoshield">Sample MotoShield — Rain Cover Concept</option>
+              <option value="steelgrip">Sample SteelGrip — 21-Tooth Concept</option>
             </select>
           </div>
           <div class="form-group">
             <label for="quantity">Expected Quantity</label>
             <select id="quantity" name="quantity">
               <option value="">Select Quantity Range</option>
-              <option value="1000-3000">1000~3000 pairs</option>
-              <option value="3000-10000">3000~10,000 pairs</option>
-              <option value="10000-20000">10,000~20,000 pairs</option>
-              <option value="20000+">20,000 pairs+</option>
+              <option value="sample-small">Small sample set</option>
+              <option value="sample-medium">Medium pilot batch</option>
+              <option value="sample-large">Large demo run</option>
+              <option value="custom">Custom request</option>
             </select>
           </div>
           <div class="form-group">
@@ -232,7 +232,7 @@ function showContactModal(buttonType) {
             <textarea id="message" name="message" rows="4" placeholder="Tell us your requirements, timeline, or questions..."></textarea>
           </div>
           <button type="submit" class="btn-primary large">
-            ${buttonType.toLowerCase().includes('sample') ? 'Request Sample Kit' : 'Get Quote'}
+            ${buttonType.toLowerCase().includes('sample') ? 'Request Sample Kit' : 'View Demo Details'}
           </button>
         </form>
       </div>
@@ -285,7 +285,7 @@ function showContactModal(buttonType) {
 
       track('lead_submit', { origin: 'modal' });
       trackConversion('AW-XXXXXXX/quote_submit'); // replace with real send_to
-      alert('Thank you! We will contact you within 24 hours with your sample kit and pricing information.');
+      alert('Thank you! We will follow up soon with sample kit notes and demo details.');
       closeModal();
     } catch (err) {
       console.error(err);
