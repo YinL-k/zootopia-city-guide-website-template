@@ -7,6 +7,6 @@
   </defs>
   <rect width="1280" height="720" fill="url(#grad)" rx="24" ry="24" />
   <text x="640" y="320" font-family="'Inter', 'Arial', sans-serif" font-size="64" fill="#fff" text-anchor="middle" font-weight="700">Storyboards</text>
-  <text x="640" y="400" font-family="'Inter', 'Arial', sans-serif" font-size="36" fill="#e0e7ff" text-anchor="middle">Judy & Nick Boards</text>
+  <text x="640" y="400" font-family="'Inter', 'Arial', sans-serif" font-size="36" fill="#e0e7ff" text-anchor="middle">Judy &amp; Nick Boards</text>
   <text x="40" y="670" font-family="'Inter', 'Arial', sans-serif" font-size="20" fill="#e0e7ff">Zootopia Fan Guide</text>
 </svg>
