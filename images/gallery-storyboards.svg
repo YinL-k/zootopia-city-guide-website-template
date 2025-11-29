@@ -1,0 +1,15 @@
+
+<svg xmlns='http://www.w3.org/2000/svg' width='1000' height='600' viewBox='0 0 1000 600'>
+  <defs>
+    <linearGradient id='gallery-storyboards-svg-grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#0f3f5c' stop-opacity='0.95'/>
+      <stop offset='100%' stop-color='#071c29' stop-opacity='0.95'/>
+    </linearGradient>
+  </defs>
+  <rect width='1000' height='600' fill='url(#gallery-storyboards-svg-grad)'/>
+  <rect x='50.0' y='72.0' width='900.0' height='132.0' fill='rgba(255,255,255,0.08)' rx='18'/>
+  <rect x='70.0' y='330.0' width='860.0' height='120.0' fill='rgba(0,0,0,0.16)' rx='18'/>
+  <text x='50%' y='228.0' fill='white' font-size='42.00000000000001' font-family="'Inter','Segoe UI','Helvetica',sans-serif" text-anchor='middle' font-weight='700'>Storyboards</text>
+  <text x='50%' y='432.0' fill='white' font-size='24.0' font-family="'Inter','Segoe UI','Helvetica',sans-serif" text-anchor='middle' font-weight='500'>Judy & Nick beats</text>
+  <text x='976' y='580' fill='white' font-size='18.0' font-family="'Inter','Segoe UI','Helvetica',sans-serif" text-anchor='end' opacity='0.85'>Zootopia City Guide</text>
+</svg>

@@ -1,0 +1,15 @@
+
+<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675' viewBox='0 0 1200 675'>
+  <defs>
+    <linearGradient id='hero-savannah-central-svg-grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#1f4b99' stop-opacity='0.95'/>
+      <stop offset='100%' stop-color='#0f274f' stop-opacity='0.95'/>
+    </linearGradient>
+  </defs>
+  <rect width='1200' height='675' fill='url(#hero-savannah-central-svg-grad)'/>
+  <rect x='60.0' y='81.0' width='1080.0' height='148.5' fill='rgba(255,255,255,0.08)' rx='18'/>
+  <rect x='84.00000000000001' y='371.25000000000006' width='1032.0' height='135.0' fill='rgba(0,0,0,0.16)' rx='18'/>
+  <text x='50%' y='256.5' fill='white' font-size='47.25000000000001' font-family="'Inter','Segoe UI','Helvetica',sans-serif" text-anchor='middle' font-weight='700'>Welcome to Zootopia</text>
+  <text x='50%' y='486.0' fill='white' font-size='27.0' font-family="'Inter','Segoe UI','Helvetica',sans-serif" text-anchor='middle' font-weight='500'>Savannah Central skyline</text>
+  <text x='1176' y='655' fill='white' font-size='20.25' font-family="'Inter','Segoe UI','Helvetica',sans-serif" text-anchor='end' opacity='0.85'>Zootopia City Guide</text>
+</svg>

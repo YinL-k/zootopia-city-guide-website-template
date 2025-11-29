@@ -1,0 +1,15 @@
+
+<svg xmlns='http://www.w3.org/2000/svg' width='960' height='540' viewBox='0 0 960 540'>
+  <defs>
+    <linearGradient id='scene-sahara-concert-svg-grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#c76b2b' stop-opacity='0.95'/>
+      <stop offset='100%' stop-color='#6a3212' stop-opacity='0.95'/>
+    </linearGradient>
+  </defs>
+  <rect width='960' height='540' fill='url(#scene-sahara-concert-svg-grad)'/>
+  <rect x='48.0' y='64.8' width='864.0' height='118.8' fill='rgba(255,255,255,0.08)' rx='18'/>
+  <rect x='67.2' y='297.0' width='825.6' height='108.0' fill='rgba(0,0,0,0.16)' rx='18'/>
+  <text x='50%' y='205.2' fill='white' font-size='37.800000000000004' font-family="'Inter','Segoe UI','Helvetica',sans-serif" text-anchor='middle' font-weight='700'>Sahara Square</text>
+  <text x='50%' y='388.8' fill='white' font-size='21.6' font-family="'Inter','Segoe UI','Helvetica',sans-serif" text-anchor='middle' font-weight='500'>Gazelle's concert glow</text>
+  <text x='936' y='520' fill='white' font-size='16.2' font-family="'Inter','Segoe UI','Helvetica',sans-serif" text-anchor='end' opacity='0.85'>Zootopia City Guide</text>
+</svg>

@@ -1,0 +1,15 @@
+
+<svg xmlns='http://www.w3.org/2000/svg' width='360' height='120' viewBox='0 0 360 120'>
+  <defs>
+    <linearGradient id='zootopia-logo-svg-grad' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#1b8f6b' stop-opacity='0.95'/>
+      <stop offset='100%' stop-color='#0f513f' stop-opacity='0.95'/>
+    </linearGradient>
+  </defs>
+  <rect width='360' height='120' fill='url(#zootopia-logo-svg-grad)'/>
+  <rect x='18.0' y='14.399999999999999' width='324.0' height='26.4' fill='rgba(255,255,255,0.08)' rx='18'/>
+  <rect x='25.200000000000003' y='66.0' width='309.6' height='24.0' fill='rgba(0,0,0,0.16)' rx='18'/>
+  <text x='50%' y='45.6' fill='white' font-size='8.4' font-family="'Inter','Segoe UI','Helvetica',sans-serif" text-anchor='middle' font-weight='700'>Zootopia Guide</text>
+  <text x='50%' y='86.39999999999999' fill='white' font-size='4.8' font-family="'Inter','Segoe UI','Helvetica',sans-serif" text-anchor='middle' font-weight='500'>Fan City Emblem</text>
+  <text x='336' y='100' fill='white' font-size='3.5999999999999996' font-family="'Inter','Segoe UI','Helvetica',sans-serif" text-anchor='end' opacity='0.85'>Zootopia City Guide</text>
+</svg>
