@@ -47,9 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     button.addEventListener('click', function() {
       const label = this.textContent.trim();
       track('cta_click', { label });
-      if (label.toLowerCase().includes('sample') || label.toLowerCase().includes('quote') || label.toLowerCase().includes('demo')) {
-        showContactModal(label);
-      }
+      showContactModal(label);
     });
   });
 
@@ -117,13 +115,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Sticky CTA button
   const stickyBtn = document.createElement('button');
-  stickyBtn.textContent = 'View Sample';
+  stickyBtn.textContent = 'Plan a Visit';
   stickyBtn.className = 'btn-primary sticky-cta cta-trigger';
-  stickyBtn.setAttribute('aria-label', 'View Sample');
+  stickyBtn.setAttribute('aria-label', 'Plan a Zootopia visit');
   document.body.appendChild(stickyBtn);
   stickyBtn.addEventListener('click', () => {
     track('sticky_cta_click');
-    showContactModal('View Sample');
+    showContactModal('Plan a Visit');
   });
 
   // Resource links tracking
@@ -176,13 +174,13 @@ function showContactModal(buttonType) {
   modal.innerHTML = `
     <div class="modal-content">
       <div class="modal-header">
-        <h3>${buttonType.toLowerCase().includes('sample') ? 'Request Sample Kit' : 'View Demo Details'}</h3>
+        <h3>${buttonType}</h3>
         <button class="modal-close" aria-label="Close">&times;</button>
       </div>
       <div class="modal-body">
         <form class="contact-form">
           <div class="form-group">
-            <label for="company">Team or Project Name *</label>
+            <label for="company">Watch Crew *</label>
             <input type="text" id="company" name="company" required>
           </div>
           <div class="form-group">
@@ -198,41 +196,41 @@ function showContactModal(buttonType) {
             <input type="tel" id="phone" name="phone">
           </div>
           <div class="form-group">
-            <label for="product">Product Interest</label>
+            <label for="product">Scene Interest</label>
             <select id="product" name="product">
-              <option value="">Select Product Line</option>
-              <option value="grip-lite">Sample Grip Lite — 6 Stud Full Cover Concept</option>
-              <option value="flexclaw">Sample FlexClaw — Convertible Cover Concept</option>
-              <option value="icewalker">Sample IceWalker — Everyday Traction Concept</option>
-              <option value="griprunner">Sample GripRunner — 11-Spike Concept</option>
-              <option value="motoshield">Sample MotoShield — Rain Cover Concept</option>
-              <option value="steelgrip">Sample SteelGrip — 21-Tooth Concept</option>
+              <option value="">Choose a Scene</option>
+              <option value="savannah-chase">Savannah Central Chase</option>
+              <option value="rainforest-mystery">Rainforest District Mystery</option>
+              <option value="tundra-parley">Tundratown Parley with Mr. Big</option>
+              <option value="rodentia-run">Little Rodentia Pursuit</option>
+              <option value="sahara-concert">Sahara Square Concert</option>
+              <option value="hall-reveal">City Hall Night Howler Reveal</option>
             </select>
           </div>
           <div class="form-group">
             <label for="quantity">Expected Quantity</label>
             <select id="quantity" name="quantity">
-              <option value="">Select Quantity Range</option>
-              <option value="sample-small">Small sample set</option>
-              <option value="sample-medium">Medium pilot batch</option>
-              <option value="sample-large">Large demo run</option>
-              <option value="custom">Custom request</option>
+              <option value="">How Many Viewers?</option>
+              <option value="duo">2 friends</option>
+              <option value="family">3-5 friends</option>
+              <option value="party">6+ watch party</option>
+              <option value="group">Club or classroom</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="samples">Sample Quantity</label>
+            <label for="samples">Snacks &amp; Props</label>
             <select id="samples" name="samples">
-              <option value="">Select Sample Quantity</option>
-              <option value="1-2">1~2 pairs / model</option>
-              <option value="3-5">3~5 pairs / model</option>
+              <option value="">Choose treats</option>
+              <option value="1-2">Carrot pens and pawpsicles</option>
+              <option value="3-5">Gazelle posters and playlists</option>
             </select>
           </div>
           <div class="form-group">
             <label for="message">Additional Requirements</label>
-            <textarea id="message" name="message" rows="4" placeholder="Tell us your requirements, timeline, or questions..."></textarea>
+            <textarea id="message" name="message" rows="4" placeholder="Share favorite quotes, cosplay ideas, or trivia themes..."></textarea>
           </div>
           <button type="submit" class="btn-primary large">
-            ${buttonType.toLowerCase().includes('sample') ? 'Request Sample Kit' : 'View Demo Details'}
+            Send Zootopia Plan
           </button>
         </form>
       </div>
@@ -285,7 +283,7 @@ function showContactModal(buttonType) {
 
       track('lead_submit', { origin: 'modal' });
       trackConversion('AW-XXXXXXX/quote_submit'); // replace with real send_to
-      alert('Thank you! We will follow up soon with sample kit notes and demo details.');
+      alert('Thanks! We will follow up with your Zootopia watch guide.');
       closeModal();
     } catch (err) {
       console.error(err);
