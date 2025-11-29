@@ -77,8 +77,14 @@ p{margin-bottom:1rem;font-size:1.1rem;line-height:1.7}
 .advantage-card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,42,.15) 0%,rgba(15,23,42,.78) 70%,rgba(15,23,42,.92) 100%);z-index:-1;transition:opacity .3s ease}
 .advantage-card:hover{transform:translateY(-8px);box-shadow:0 26px 48px rgba(15,23,42,.35)}
 .advantage-card:hover::before{opacity:.95}
-.advantage-icon{width:64px;height:64px;background:rgba(22,102,192,.85);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0;box-shadow:0 12px 30px rgba(22,102,192,.35);position:absolute;right:24px;bottom:24px}
-.advantage-icon i{font-size:1.8rem;color:#fff}
+.advantage-icon{width:72px;height:72px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0;position:absolute;right:24px;bottom:24px;color:#f8fafc;border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(6px);box-shadow:0 16px 38px rgba(0,0,0,.35)}
+.advantage-icon svg{width:38px;height:38px;display:block;color:inherit}
+.lead-judy .advantage-icon{background:linear-gradient(135deg,#7b5cf6,#e86797);box-shadow:0 16px 38px rgba(123,92,246,.45)}
+.lead-nick .advantage-icon{background:linear-gradient(135deg,#ff8a4c,#e63946);box-shadow:0 16px 38px rgba(255,138,76,.45)}
+.lead-bogo .advantage-icon{background:linear-gradient(135deg,#0ea5e9,#2563eb);box-shadow:0 16px 38px rgba(14,165,233,.45)}
+.lead-bellwether .advantage-icon{background:linear-gradient(135deg,#fbbf24,#f97316);box-shadow:0 16px 38px rgba(251,191,36,.42)}
+.lead-clawhauser .advantage-icon{background:linear-gradient(135deg,#f59e0b,#ef4444);box-shadow:0 16px 38px rgba(245,158,11,.42)}
+.lead-flash .advantage-icon{background:linear-gradient(135deg,#22c55e,#059669);box-shadow:0 16px 38px rgba(34,197,94,.42)}
 .advantage-card h3{color:#fff;margin-bottom:.5rem;font-size:1.6rem;line-height:1.3;text-shadow:0 8px 24px rgba(0,0,0,.45);max-width:20rem}
 .advantage-card p{color:#e2e8f0;line-height:1.7;margin-bottom:0;max-width:22rem;text-shadow:0 6px 18px rgba(15,23,42,.6)}
 
