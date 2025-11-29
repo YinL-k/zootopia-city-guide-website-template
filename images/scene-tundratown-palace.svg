@@ -1,0 +1,20 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='720' viewBox='0 0 1200 720' role='img' aria-label='Mr. Big in his ice palace'>
+  <defs>
+    <linearGradient id='bg3' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0%' stop-color='#b9d2ff'/>
+      <stop offset='100%' stop-color='#7aa0d8'/>
+    </linearGradient>
+  </defs>
+  <rect width='1200' height='720' fill='url(#bg3)'/>
+  <g fill='#ffffff44' opacity='0.3'>
+    <circle cx='200' cy='220' r='150'/>
+    <circle cx='520' cy='180' r='110'/>
+    <circle cx='880' cy='240' r='160'/>
+  </g>
+  <g fill='#274b7a' opacity='0.55'>
+    <path d='M120 520 Q220 380 360 520 T600 520 T900 520 T1140 520 L1140 640 L120 640 Z'/>
+  </g>
+  <text x='600' y='320' text-anchor='middle' fill='#0a2340' font-family='Inter, sans-serif' font-size='64' font-weight='800'>Tundratown Limo Stop</text>
+  <text x='600' y='410' text-anchor='middle' fill='#0a2340' font-family='Inter, sans-serif' font-size='32' font-weight='600'>Mr. Big's icy greeting</text>
+  <text x='600' y='500' text-anchor='middle' fill='#0a2340' font-family='Inter, sans-serif' font-size='22' font-weight='500'>Polar bears guard the frozen palace</text>
+</svg>

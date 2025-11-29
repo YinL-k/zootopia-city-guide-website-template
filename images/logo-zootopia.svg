@@ -1,0 +1,20 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='720' viewBox='0 0 1200 720' role='img' aria-label='Zootopia guide logo badge'>
+  <defs>
+    <linearGradient id='bg16' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0%' stop-color='#c8f1ff'/>
+      <stop offset='100%' stop-color='#65b8ff'/>
+    </linearGradient>
+  </defs>
+  <rect width='1200' height='720' fill='url(#bg16)'/>
+  <g fill='#ffffff44' opacity='0.3'>
+    <circle cx='200' cy='220' r='150'/>
+    <circle cx='520' cy='180' r='110'/>
+    <circle cx='880' cy='240' r='160'/>
+  </g>
+  <g fill='#1172b8' opacity='0.55'>
+    <path d='M120 520 Q220 380 360 520 T600 520 T900 520 T1140 520 L1140 640 L120 640 Z'/>
+  </g>
+  <text x='600' y='320' text-anchor='middle' fill='#0b2d4a' font-family='Inter, sans-serif' font-size='64' font-weight='800'>Zootopia Guide</text>
+  <text x='600' y='410' text-anchor='middle' fill='#0b2d4a' font-family='Inter, sans-serif' font-size='32' font-weight='600'>Skyline badge</text>
+  <text x='600' y='500' text-anchor='middle' fill='#0b2d4a' font-family='Inter, sans-serif' font-size='22' font-weight='500'>Fan guide for every district</text>
+</svg>

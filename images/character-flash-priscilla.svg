@@ -1,0 +1,20 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='720' viewBox='0 0 1200 720' role='img' aria-label='Flash and Priscilla portrait'>
+  <defs>
+    <linearGradient id='bg12' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0%' stop-color='#d6ffe6'/>
+      <stop offset='100%' stop-color='#6fd09d'/>
+    </linearGradient>
+  </defs>
+  <rect width='1200' height='720' fill='url(#bg12)'/>
+  <g fill='#ffffff44' opacity='0.3'>
+    <circle cx='200' cy='220' r='150'/>
+    <circle cx='520' cy='180' r='110'/>
+    <circle cx='880' cy='240' r='160'/>
+  </g>
+  <g fill='#0d7a50' opacity='0.55'>
+    <path d='M120 520 Q220 380 360 520 T600 520 T900 520 T1140 520 L1140 640 L120 640 Z'/>
+  </g>
+  <text x='600' y='320' text-anchor='middle' fill='#064029' font-family='Inter, sans-serif' font-size='64' font-weight='800'>Flash & Priscilla</text>
+  <text x='600' y='410' text-anchor='middle' fill='#064029' font-family='Inter, sans-serif' font-size='32' font-weight='600'>DMV sloth humor</text>
+  <text x='600' y='500' text-anchor='middle' fill='#064029' font-family='Inter, sans-serif' font-size='22' font-weight='500'>Neon DMV lights and café break vibes</text>
+</svg>
