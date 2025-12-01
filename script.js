@@ -115,13 +115,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Sticky CTA button
   const stickyBtn = document.createElement('button');
-  stickyBtn.textContent = 'Plan a Visit';
+  stickyBtn.textContent = 'Get Scene Guide';
   stickyBtn.className = 'btn-primary sticky-cta cta-trigger';
-  stickyBtn.setAttribute('aria-label', 'Plan a Zootopia visit');
+  stickyBtn.setAttribute('aria-label', 'Get the Zootopia scene guide');
   document.body.appendChild(stickyBtn);
   stickyBtn.addEventListener('click', () => {
     track('sticky_cta_click');
-    showContactModal('Plan a Visit');
+    showContactModal('Get Scene Guide');
   });
 
   // Resource links tracking
