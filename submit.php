@@ -1,98 +1,57 @@
 <?php
-// Backend endpoint for handling JSON form submissions
-// Configure database connection
-$host = 'localhost';
-$db   = 'final_project';
-$user = 'root';
-$pass = '123456';
-$charset = 'utf8mb4';
 
-// Basic CORS and content headers
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
+header("Content-Type: application/json");
 
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(204);
+$data = json_decode(file_get_contents("php://input"), true);
+
+$team     = $data["team"]     ?? null;
+$name     = $data["name"]     ?? null;
+$email    = $data["email"]    ?? null;
+$phone    = $data["phone"]    ?? null;
+$product  = $data["product"]  ?? null;
+$quantity = $data["quantity"] ?? null;
+$samples  = $data["samples"]  ?? null;
+$message  = $data["message"]  ?? null;
+$source   = $data["source"]   ?? "unknown";
+
+if (!$email) {
+    echo json_encode(["status" => "error", "message" => "Email is required"]);
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    echo json_encode(['success' => false, 'error' => 'Method Not Allowed']);
-    exit;
-}
+$DB_HOST = "localhost";
+$DB_NAME = "final_project";
+$DB_USER = "root";
+$DB_PASS = "123456";
 
-// Read and decode the incoming JSON payload
-$rawInput = file_get_contents('php://input');
-$data = json_decode($rawInput, true);
-
-if (!is_array($data)) {
-    http_response_code(400);
-    echo json_encode(['success' => false, 'error' => 'Invalid JSON payload']);
-    exit;
-}
-
-// Keep only fields that exist in the leads table
-$allowedFields = [
-    'team',      // inline form
-    'email',
-    'message',
-    'source',
-    'company',   // modal form
-    'name',
-    'phone',
-    'product',
-    'quantity',
-    'samples'
-];
-
-$filtered = array_intersect_key($data, array_flip($allowedFields));
-if (empty($filtered)) {
-    http_response_code(400);
-    echo json_encode(['success' => false, 'error' => 'No valid fields provided']);
-    exit;
-}
-
-$columns = array_keys($filtered);
-$placeholders = array_map(fn($col) => ':' . $col, $columns);
-
-// Prepare DSN and PDO options
-$dsn = "mysql:host={$host};dbname={$db};charset={$charset}";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
+$dsn = "mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4";
 
 try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
-
-    $sql = sprintf(
-        'INSERT INTO leads (%s) VALUES (%s)',
-        implode(', ', $columns),
-        implode(', ', $placeholders)
-    );
-
-    $stmt = $pdo->prepare($sql);
-    foreach ($filtered as $field => $value) {
-        // Bind values, using null for empty strings to keep database flexible
-        $stmt->bindValue(':' . $field, $value === '' ? null : $value, PDO::PARAM_STR);
-    }
-
-    $stmt->execute();
-
-    echo json_encode([
-        'success' => true,
-        'id' => $pdo->lastInsertId(),
-        'message' => 'Lead stored successfully'
+    $pdo = new PDO($dsn, $DB_USER, $DB_PASS, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     ]);
-} catch (PDOException $e) {
-    http_response_code(500);
-    echo json_encode([
-        'success' => false,
-        'error' => 'Database error',
-        'details' => $e->getMessage(),
+
+    $stmt = $pdo->prepare("
+        INSERT INTO leads 
+        (team, name, email, phone, product, quantity, samples, message, source)
+        VALUES
+        (:team, :name, :email, :phone, :product, :quantity, :samples, :message, :source)
+    ");
+
+    $stmt->execute([
+        ":team"     => $team,
+        ":name"     => $name,
+        ":email"    => $email,
+        ":phone"    => $phone,
+        ":product"  => $product,
+        ":quantity" => $quantity,
+        ":samples"  => $samples,
+        ":message"  => $message,
+        ":source"   => $source
     ]);
+
+    echo json_encode(["status" => "success"]);
+
+} catch (Exception $e) {
+    echo json_encode(["status" => "error", "message" => "Database error"]);
 }
