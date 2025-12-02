@@ -52,6 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
     leadForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
+      // 先用浏览器自带的校验检查所有 required 和 type="email"
+      if (!leadForm.checkValidity()) {
+        // 这一句会弹出浏览器原生的错误提示，比如 “Please include an '@' in the email address”
+        leadForm.reportValidity();
+        return;
+      }
+
       var teamInput = document.getElementById('lf-team');
       var emailInput = document.getElementById('lf-email');
       var messageInput = document.getElementById('lf-message');
@@ -59,11 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
       var team = teamInput ? teamInput.value.trim() : '';
       var email = emailInput ? emailInput.value.trim() : '';
       var message = messageInput ? messageInput.value.trim() : '';
-
-      if (!email) {
-        alert('Please enter your email.');
-        return;
-      }
 
       var btn = leadSubmitButton;
       var originalText = btn.textContent;
