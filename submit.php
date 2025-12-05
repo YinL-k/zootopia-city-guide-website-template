@@ -4,15 +4,10 @@ header("Content-Type: application/json");
 
 $data = json_decode(file_get_contents("php://input"), true);
 
-$team     = $data["team"]     ?? null;
-$name     = $data["name"]     ?? null;
-$email    = $data["email"]    ?? null;
-$phone    = $data["phone"]    ?? null;
-$product  = $data["product"]  ?? null;
-$quantity = $data["quantity"] ?? null;
-$samples  = $data["samples"]  ?? null;
-$message  = $data["message"]  ?? null;
-$source   = $data["source"]   ?? "unknown";
+$team    = $data["team"]    ?? null;
+$email   = $data["email"]   ?? null;
+$message = $data["message"] ?? null;
+$source  = $data["source"]  ?? "inline_form";
 
 if (!$email) {
     echo json_encode(["status" => "error", "message" => "Email is required"]);
@@ -32,22 +27,15 @@ try {
     ]);
 
     $stmt = $pdo->prepare("
-        INSERT INTO leads 
-        (team, name, email, phone, product, quantity, samples, message, source)
-        VALUES
-        (:team, :name, :email, :phone, :product, :quantity, :samples, :message, :source)
+        INSERT INTO leads (team, email, message, source)
+        VALUES (:team, :email, :message, :source)
     ");
 
     $stmt->execute([
-        ":team"     => $team,
-        ":name"     => $name,
-        ":email"    => $email,
-        ":phone"    => $phone,
-        ":product"  => $product,
-        ":quantity" => $quantity,
-        ":samples"  => $samples,
-        ":message"  => $message,
-        ":source"   => $source
+        ":team"    => $team,
+        ":email"   => $email,
+        ":message" => $message,
+        ":source"  => $source
     ]);
 
     echo json_encode(["status" => "success"]);

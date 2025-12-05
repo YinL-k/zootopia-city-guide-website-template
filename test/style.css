@@ -1,0 +1,171 @@
+/* Import Fonts for Modern/Elegant Look */
+/* Playfair Display for headers, Montserrat for body text */
+
+:root {
+    --primary-color: #0d1117; /* Dark background */
+    --secondary-color: #f0f6fc; /* Light text */
+    --accent-color: #1a73e8; /* Blue accent for buttons/focus */
+    --button-hover: #1558b3;
+}
+
+/* --- Global Reset and Base Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--secondary-color);
+}
+
+/* --- 1. Login Page Styles (index.html) --- */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1e1e2f; /* Dark, but not black */
+    background-image: linear-gradient(135deg, #1e1e2f 0%, #0a0a1a 100%);
+}
+
+.login-container {
+    background: rgba(45, 45, 65, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.login-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 300;
+    color: #c9d1d9;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background-color: #0d1117;
+    color: var(--secondary-color);
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.5);
+}
+
+.login-button {
+    width: 100%;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.1s;
+}
+
+.login-button:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+/* --- 2. Welcome Page Styles (welcome.php) --- */
+.welcome-body {
+    overflow: hidden; /* Important for canvas background */
+    background-color: var(--primary-color);
+    min-height: 100vh;
+}
+
+/* Canvas for Liquid Flux */
+#liquid-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Below content */
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 10; /* Above canvas */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2); /* Slight overlay for readability */
+    padding: 20px;
+}
+
+.welcome-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    font-weight: 700;
+    color: #e6e6e6;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.welcome-content p {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #a8a8a8;
+    margin-bottom: 40px;
+}
+
+/* CTA Button for Watch Night */
+.cta-button {
+    background: none;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.cta-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 25px rgba(26, 115, 232, 0.7);
+    transform: scale(1.05);
+}
